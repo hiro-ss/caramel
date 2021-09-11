@@ -8,6 +8,9 @@ class ApplicationController < ActionController::Base
     protected
 
     def configure_permitted_parameters
-        devise_parameter_sanitizer.permit(:sign_up, keys: [name])
+        #新規登録時にname,introduceの取得を許可
+        devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :introduce])
+        #情報更新時にname,introduceの取得を許可
+        devise_parameter_sanitizer.permit(:account_update, keys: [:name, :introduce])
     end
 end
