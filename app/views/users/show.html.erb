@@ -1,2 +1,15 @@
 <h1>Users#show</h1>
 <p><%= @user.id %></p>
+
+<div class="user-avatar">
+    <%= image_tag @user.avatar.url(:thumb) %>
+</div>
+
+<%= @user.name %>
+<%= @user.introduce %>
+
+<% if current_user.id == @user.id %>
+    <div class="user-action">
+        <%= link_to(content_tag(:i,"",class: 'fas fa-edit fa-2x'), edit_user_registration_path) %>
+    </div>
+<% end %>
