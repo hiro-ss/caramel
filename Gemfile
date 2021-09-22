@@ -63,3 +63,5 @@ gem 'devise-i18n-views'
 
 gem 'carrierwave'
 gem 'mini_magick'
+
+gem 'dotenv-rails'
