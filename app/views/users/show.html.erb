@@ -12,4 +12,16 @@
     <div class="user-action">
         <%= link_to(content_tag(:i,"",class: 'fas fa-edit fa-2x'), edit_user_registration_path) %>
     </div>
+    <% else %>
+    <% if @isRoom == true %>
+        <p><a href="/rooms/<%= @roomId %>">チャットへ</a>
+    <% else %>
+        <%= form_for @room do |f| %>
+        <%= fields_for @entry do |e| %>
+            <%= e.hidden_field :user_id, :value=> @user.id %>
+        <% end %>
+        <%= f.submit "チャットを始める" %>
+        <% end %>
+    <% end %>
+
 <% end %>
