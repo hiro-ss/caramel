@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get 'users/show' => 'users#show'
   resources :users, only: [:show, :index]
 
-  get 'messages/index/:id' => "messages#index"
-  get 'messages/room/:user_id/:to_user_id' => "messages#roomshow"
-  resources :messages
+  resources :messages, only: [:create]
+
+  resources :rooms, :only => [:create, :show, :index]
 end
