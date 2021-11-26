@@ -1,0 +1,6 @@
+<% @lessons.each do |lesson| %>
+<p><a href="/lessons/<%= lesson.id %>"><%= lesson.title %>さん</a></p>
+<p><%= lesson.price %></p>
+<p><%= lesson.explain %></p>
+<p><%= lesson.user_id %></p>
+<% end %>

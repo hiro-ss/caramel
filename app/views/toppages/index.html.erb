@@ -4,4 +4,9 @@
 <% @users.each do |u| %>
   <p><a href="/users/<%= u.id %>"><%= u.email %>さん</a></p>
   <hr>
-  <% end %>
+<% end %>
+
+<% @lessons.each do |lesson| %>
+  <p><a href="/lessons/<%= lesson.id %>"><%= lesson.title %></a></p>
+  <p><%= lesson.price %></p>
+<% end %>

@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+# coding: utf-8
+
+Lesson.create(:title => 'テスト１', :explain => 'これはテストです１', :price => 1000)
+Lesson.create(:title => 'テスト２', :explain => 'これはテストです２', :price => 2300)
+Lesson.create(:title => 'テスト３', :explain => 'これはテストです３', :price => 800)
