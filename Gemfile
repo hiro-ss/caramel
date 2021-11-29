@@ -65,3 +65,5 @@ gem 'carrierwave'
 gem 'mini_magick'
 
 gem 'dotenv-rails'
+
+gem 'jquery-rails'

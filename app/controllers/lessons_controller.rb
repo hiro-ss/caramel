@@ -13,6 +13,7 @@ class LessonsController < ApplicationController
 
   def new
     @lesson = Lesson.new
+    @lesson.lesson_images.new
   end
 
   def create
@@ -36,7 +37,7 @@ class LessonsController < ApplicationController
 
   private
   def lesson_params
-    params.require(:lesson).permit(:title,:explain,:price).merge(user_id: current_user.id)
+    params.require(:lesson).permit(:title,:explain,:price,images_attributes: [:src]).merge(user_id: current_user.id)
   end
 
   def ensure_current_user
