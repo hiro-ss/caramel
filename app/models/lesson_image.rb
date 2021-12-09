@@ -1,4 +1,4 @@
 class LessonImage < ApplicationRecord
   belongs_to :lesson
-  mount_uploader :src, ImageUploader
+  mount_uploader :image, ImageUploader
 end

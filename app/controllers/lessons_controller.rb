@@ -9,11 +9,12 @@ class LessonsController < ApplicationController
   def show
     @lesson = Lesson.find(params[:id])
     @user = User.find_by(id: @lesson.user_id)
+    @lesson_images = @lesson.lesson_images
   end
 
   def new
     @lesson = Lesson.new
-    @lesson.lesson_images.new
+    @lesson_images = @lesson.lesson_images.build
   end
 
   def create
@@ -37,7 +38,7 @@ class LessonsController < ApplicationController
 
   private
   def lesson_params
-    params.require(:lesson).permit(:title,:explain,:price,images_attributes: [:src]).merge(user_id: current_user.id)
+    params.require(:lesson).permit(:title,:explain,:price,lesson_images_attributes: [:id, :lesson_id, :image]).merge(user_id: current_user.id)
   end
 
   def ensure_current_user

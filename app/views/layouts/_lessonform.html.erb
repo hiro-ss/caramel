@@ -1,11 +1,11 @@
-  <%= form_with model: @lesson do |form| %>
-    <p>タイトル<%= form.text_field :title %></p>
-    <p>説明<%= form.text_area :explain %></p>
-    <p>料金<%= form.number_field :price %></p>
+  <%= form_with model: @lesson do |f| %>
+    <p>タイトル<%= f.text_field :title %></p>
+    <p>説明<%= f.text_area :explain %></p>
+    <p>料金<%= f.number_field :price %></p>
 
-    <%= form.fields_for :lesson_images do |image| %>
-      <%= image.file_field :src %>
+    <%= f.fields_for :lesson_images do |i| %>
+      <%= i.file_field :image %>
     <% end %>
 
-    <p>送信<%= form.submit %></p>
+    <p>送信<%= f.submit %></p>
   <% end %>

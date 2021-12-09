@@ -3,6 +3,15 @@
 <p><%= @lesson.explain %></p>
 <p><%= @lesson.user_id %></p>
 
+<% @lesson_images.each do |lesson_image| %> 
+  <% if lesson_image.image.blank? %>
+    <%= image_tag "" %>
+  <% else %>
+    <%= image_tag lesson_image.image.url %>
+  <% end %>
+<% end %>
+
+
 <% if @lesson.user_id == current_user.id %>
   <%= link_to "編集", edit_lesson_path %>
 <% end %>
