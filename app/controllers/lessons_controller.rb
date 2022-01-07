@@ -30,7 +30,7 @@ class LessonsController < ApplicationController
   end
   def update
     if @lesson.update(lesson_params)
-      redirect_to lessons_path
+      redirect_to lesson_path
     else
       render :edit
     end
