@@ -36,6 +36,17 @@ class LessonsController < ApplicationController
     end
   end
 
+  def destroy
+    lesson = Lesson.find(params[:id])
+      if lesson.user_id == current_user.id
+        if lesson.destroy
+          redirect_to lessons_path, notice: "削除が完了しました"
+        else
+          redirect_to lessons_path, alert: "削除が失敗しました"
+        end
+      end
+  end
+
   private
   def lesson_params
     params.require(:lesson).permit(:title,:explain,:price,lesson_images_attributes: [:id, :lesson_id, :image]).merge(user_id: current_user.id)

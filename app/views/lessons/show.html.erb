@@ -14,4 +14,5 @@
 
 <% if @lesson.user_id == current_user.id %>
   <%= link_to "編集", edit_lesson_path %>
+  <%= link_to '削除', lesson_path(@lesson.id),method: :delete %>
 <% end %>
