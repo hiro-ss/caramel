@@ -21,4 +21,12 @@ module RoomsHelper
     tag.p "#{name}", class: "dm_list__content__link__box__name"
   end
 
+  def user_icon(room)
+    entry = room.entries.where.not(user_id: current_user)
+    
+    avatar = entry[0].user.avatar
+
+    image_tag avatar.url(:thumb)
+  end
+
 end

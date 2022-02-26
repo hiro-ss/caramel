@@ -4,6 +4,7 @@
     <div class="dm_list__content">
       <%= link_to room_path(room), class: "dm_list__content__link" do %>
         <div class="dm_list__content__link__box">
+          <%= user_icon(room) %>
           <h3 class="dm_list__content__link__box__name">
             <%= opponent_user(room) %>
           </h3>
