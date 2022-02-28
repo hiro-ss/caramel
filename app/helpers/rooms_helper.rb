@@ -26,7 +26,7 @@ module RoomsHelper
     
     avatar = entry[0].user.avatar
 
-    image_tag avatar.url(:thumb)
+    image_tag avatar.thumb.url
   end
 
 end
